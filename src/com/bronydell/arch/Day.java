@@ -2,6 +2,7 @@ package com.bronydell.arch;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -64,9 +65,12 @@ public class Day {
 		} else {
 			Pattern pattern = Pattern.compile("(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}");
 			Matcher matcher = pattern.matcher(date);
-			if (matcher.find())
-				date = LocalDateTime.parse(matcher.group(0), DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-						.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+			if (matcher.find()){
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+				LocalDate dt = LocalDate.parse(matcher.group(0), formatter);
+				date = dt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+			}
+						
 		}
 		this.date = date;
 	}
