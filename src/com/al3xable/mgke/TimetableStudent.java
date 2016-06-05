@@ -30,7 +30,7 @@ public class TimetableStudent {
     
     
     public TimetableStudent() {
-    	update();
+    	//update();
     }
     
     /**
@@ -54,6 +54,7 @@ public class TimetableStudent {
 				
 				//Why?
 				//Collections.sort(GroupList); // Groups sort
+		        Freaky.generateJSON(day.getDate()+"-student", day);
 				return true;
     		}
 		} catch (IOException e) {
@@ -157,7 +158,6 @@ public class TimetableStudent {
                 }
             }
         }
-        Freaky.generateJSON(day.getDate(), day);
     }
     
     public boolean existGroup(String group) {
