@@ -1,2 +1,2 @@
 language: java
-script: ant Main (2)
+script: ant mgke
