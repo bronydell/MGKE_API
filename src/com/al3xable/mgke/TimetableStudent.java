@@ -55,6 +55,7 @@ public class TimetableStudent {
 				//Why?
 				//Collections.sort(GroupList); // Groups sort
 		        Freaky.generateJSON(day.getDate()+"-student", day);
+		        Freaky.generateJSON("current-student", day);
 				return true;
     		}
 		} catch (IOException e) {

@@ -100,6 +100,7 @@ public class TimetableTeacher {
             day.setGroups(teachers);
             day.pickADate(_date);
             Freaky.generateJSON(day.getDate()+"-techer", day);
+            Freaky.generateJSON("current-techer", day);
         }
         return isNew;
     }
