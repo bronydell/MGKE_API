@@ -134,7 +134,7 @@ public class TimetableStudent {
 
                         for (; j < elements.size(); j++) {
                             Elements tds = elements.get(j).select("td");
-                            
+
                             if (tds.get(position).text().length() > 1
                                     && position + 1 < tds.size()) {
                             	Lesson lesson = new Lesson();
