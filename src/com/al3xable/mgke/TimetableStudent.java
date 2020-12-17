@@ -137,6 +137,7 @@ public class TimetableStudent {
                     table = null;
                 }
 
+                int numberLess = 1;
                 for (List<Element> tbl : splitTables) {
                     if (tbl.size() < 3) continue;
                     List<Group> groupList = new ArrayList<>();
@@ -155,7 +156,7 @@ public class TimetableStudent {
                             String audience = tblIter.next().text();
 
                             Lesson lesson = new Lesson();
-                            lesson.setNumber(num);
+                            lesson.setNumber(numberLess);
                             lesson.setLesson(lessonName);
                             lesson.setAudience(audience);
 
@@ -171,7 +172,7 @@ public class TimetableStudent {
                             }
                             num++;
                         }
-
+                        numberLess++;
                     }
                     day.getGroups().addAll(groupList);
                 }
