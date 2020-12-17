@@ -17,7 +17,7 @@ public class Main {
 					student.update();
 					System.out.println(new Date().toString() + ": Student updated successfully");
 				} catch (Throwable e) {
-					System.out.println(new Date().toString() + ": Student update exception");
+ 					System.out.println(new Date().toString() + ": Student update exception");
 					e.printStackTrace();
 				}
 				
